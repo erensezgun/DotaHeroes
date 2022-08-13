@@ -15,6 +15,7 @@
 		3F2E3CBB28970EC1002C9133 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F2E3CB928970EC1002C9133 /* LaunchScreen.storyboard */; };
 		3F2E3CC42897105E002C9133 /* HeroesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E3CC32897105E002C9133 /* HeroesVC.swift */; };
 		3F2E3CC628971259002C9133 /* HeroStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F2E3CC528971259002C9133 /* HeroStats.swift */; };
+		3FAA75A328A7BA880078B4F5 /* HeroesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAA75A228A7BA880078B4F5 /* HeroesCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3F2E3CBC28970EC1002C9133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2E3CC32897105E002C9133 /* HeroesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesVC.swift; sourceTree = "<group>"; };
 		3F2E3CC528971259002C9133 /* HeroStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroStats.swift; sourceTree = "<group>"; };
+		3FAA75A228A7BA880078B4F5 /* HeroesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				3F2E3CAE28970EC0002C9133 /* AppDelegate.swift */,
 				3F2E3CB028970EC0002C9133 /* SceneDelegate.swift */,
 				3F2E3CB228970EC0002C9133 /* ViewController.swift */,
+				3FAA75A228A7BA880078B4F5 /* HeroesCell.swift */,
 				3F2E3CC32897105E002C9133 /* HeroesVC.swift */,
 				3F2E3CC528971259002C9133 /* HeroStats.swift */,
 				3F2E3CB428970EC0002C9133 /* Main.storyboard */,
@@ -147,6 +150,7 @@
 				3F2E3CC42897105E002C9133 /* HeroesVC.swift in Sources */,
 				3F2E3CB328970EC0002C9133 /* ViewController.swift in Sources */,
 				3F2E3CAF28970EC0002C9133 /* AppDelegate.swift in Sources */,
+				3FAA75A328A7BA880078B4F5 /* HeroesCell.swift in Sources */,
 				3F2E3CC628971259002C9133 /* HeroStats.swift in Sources */,
 				3F2E3CB128970EC0002C9133 /* SceneDelegate.swift in Sources */,
 			);

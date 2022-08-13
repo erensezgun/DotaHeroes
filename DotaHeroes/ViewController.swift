@@ -66,10 +66,15 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
-        cell.textLabel?.text = heroes[indexPath.row].localized_name.capitalized
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellheroes", for: indexPath) as! HeroesCell
+        let imgUrl = "https://api.opendota.com" + (heroes[indexPath.row].img)
+        cell.heroImg.downloaded(from: imgUrl)
+        cell.locaLbl.text = heroes[indexPath.row].localized_name
+        cell.primaryLbl.text = heroes[indexPath.row].primary_attr
+        
         return cell
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showHeroesDetails", sender: self)
     }
@@ -78,6 +83,10 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
         if let destination = segue.destination as? HeroesVC {
             destination.hero = heroes[(tableView.indexPathForSelectedRow?.row)!]
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
     }
 }
 
