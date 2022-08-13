@@ -9,8 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var heroes = [HeroStats]()
+    // MARK: IBOutlet
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: Variables
+    
+    var heroes = [HeroStats]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +56,8 @@ class ViewController: UIViewController {
     }
 
 }
+
+// MARK: Extension
 
 extension ViewController : UITableViewDelegate , UITableViewDataSource {
     

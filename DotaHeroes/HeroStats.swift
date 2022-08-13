@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: Model
+
 struct HeroStats : Decodable {
     
     let localized_name : String

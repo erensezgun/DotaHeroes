@@ -9,12 +9,15 @@ import UIKit
 
 class HeroesVC: UIViewController {
 
+    // MARK: IBOutlet
     
     @IBOutlet weak var imgHero: UIImageView!
     @IBOutlet weak var nameHeroLbl: UILabel!
     @IBOutlet weak var attrHeroLbl: UILabel!
     @IBOutlet weak var attackHeroLbl: UILabel!
     @IBOutlet weak var legsHeroLbl: UILabel!
+    
+    // MARK: Variables
     
     var hero : HeroStats?
     
@@ -36,6 +39,8 @@ class HeroesVC: UIViewController {
     
 
 }
+
+// MARK: Extension
 
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
