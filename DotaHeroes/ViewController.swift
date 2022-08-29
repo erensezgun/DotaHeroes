@@ -11,12 +11,15 @@ class ViewController: UIViewController {
 
     // MARK: IBOutlet
     
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: Variables
     
+    var filtreHeroes = [HeroStats]()
     var heroes = [HeroStats]()
     
+    let country = ["ankara", "istanbul"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,7 +29,7 @@ class ViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        searchBar.delegate = self
     }
     
     // MARK: Function
@@ -41,7 +44,7 @@ class ViewController: UIViewController {
             if error == nil {
                 do {
                     self.heroes = try JSONDecoder().decode([HeroStats].self, from: data!)
-                    
+                    self.filtreHeroes = self.heroes
                     DispatchQueue.main.async {
                         completion()
                     }
@@ -59,19 +62,21 @@ class ViewController: UIViewController {
 
 // MARK: Extension
 
-extension ViewController : UITableViewDelegate , UITableViewDataSource {
+extension ViewController : UITableViewDelegate , UITableViewDataSource , UISearchBarDelegate{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return heroes.count
+        return filtreHeroes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellheroes", for: indexPath) as! HeroesCell
-        let imgUrl = "https://api.opendota.com" + (heroes[indexPath.row].img)
-        cell.heroImg.downloaded(from: imgUrl)
-        cell.locaLbl.text = heroes[indexPath.row].localized_name
-        cell.primaryLbl.text = heroes[indexPath.row].primary_attr
+        let imgUrl = "https://api.opendota.com" + (filtreHeroes[indexPath.row].img)
         
+        cell.heroImg.downloaded(from: imgUrl)
+        cell.locaLbl.text = filtreHeroes[indexPath.row].localized_name
+        cell.primaryLbl.text = filtreHeroes[indexPath.row].primary_attr
+        cell.heroImg.layer.masksToBounds = true
+        cell.heroImg.layer.cornerRadius = 16
         return cell
     }
     
@@ -81,12 +86,22 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource {
      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? HeroesVC {
-            destination.hero = heroes[(tableView.indexPathForSelectedRow?.row)!]
+            destination.hero = filtreHeroes[(tableView.indexPathForSelectedRow?.row)!]
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80.0
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+            filtreHeroes = heroes.filter({ $0.localized_name.contains(searchText)})
+            tableView.reloadData()
+        } else {
+            self.filtreHeroes = heroes
+            tableView.reloadData()
+        }
     }
 }
 

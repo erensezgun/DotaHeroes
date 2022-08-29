@@ -32,7 +32,7 @@ class HeroesVC: UIViewController {
         let imgUrl = "https://api.opendota.com" + (hero?.img)!
         
         imgHero.downloaded(from: imgUrl)
-       
+        imgHero.layer.cornerRadius = 30
         
     }
     

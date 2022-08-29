@@ -16,6 +16,7 @@ class HeroesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        heroImg.image = UIImage()
     }
 
 
