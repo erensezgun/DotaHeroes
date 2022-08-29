@@ -19,7 +19,7 @@ class HeroesVC: UIViewController {
     
     // MARK: Variables
     
-    var hero : HeroStats?
+    var hero: HeroStats?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class HeroesVC: UIViewController {
         
         imgHero.downloaded(from: imgUrl)
         imgHero.layer.cornerRadius = 30
-        
+        title = hero?.localized_name
     }
     
     

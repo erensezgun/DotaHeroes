@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     var filtreHeroes = [HeroStats]()
     var heroes = [HeroStats]()
     
-    let country = ["ankara", "istanbul"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,6 +29,7 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         searchBar.delegate = self
+        title = "HEROES"
     }
     
     // MARK: Function
