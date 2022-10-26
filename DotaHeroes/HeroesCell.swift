@@ -17,6 +17,8 @@ class HeroesCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         heroImg.image = UIImage()
+        heroImg.layer.borderColor = UIColor.red.cgColor
+        heroImg.layer.borderWidth = 0.5
     }
 
 

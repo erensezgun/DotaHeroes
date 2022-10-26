@@ -32,6 +32,13 @@ class ViewController: UIViewController {
         title = "HEROES"
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        getApi {
+            self.tableView.reloadData()
+        }
+        
+        searchBar.text = ""
+    }
     // MARK: Function
     
     func getApi(completion : @escaping () -> () ) {
