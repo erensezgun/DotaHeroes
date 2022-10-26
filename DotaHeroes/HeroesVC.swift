@@ -34,8 +34,30 @@ class HeroesVC: UIViewController {
         imgHero.downloaded(from: imgUrl)
         imgHero.layer.cornerRadius = 30
         title = hero?.localized_name
+        config()
     }
     
+    func config() {
+        
+        imgHero.layer.borderColor = UIColor.red.cgColor
+        imgHero.layer.borderWidth = 0.7
+        
+        nameHeroLbl.layer.borderColor = UIColor.systemBlue.cgColor
+        nameHeroLbl.layer.borderWidth = 1
+        nameHeroLbl.layer.cornerRadius = 30
+        
+        attrHeroLbl.layer.borderColor = UIColor.systemBlue.cgColor
+        attrHeroLbl.layer.borderWidth = 1
+        attrHeroLbl.layer.cornerRadius = 30
+        
+        attackHeroLbl.layer.borderColor = UIColor.systemBlue.cgColor
+        attackHeroLbl.layer.borderWidth = 1
+        attackHeroLbl.layer.cornerRadius = 30
+        
+        legsHeroLbl.layer.borderColor = UIColor.systemBlue.cgColor
+        legsHeroLbl.layer.borderWidth = 1
+        legsHeroLbl.layer.cornerRadius = 30
+    }
     
 
 }
