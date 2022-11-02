@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         searchBar.delegate = self
         title = "HEROES"
+        print("HEROES")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -111,5 +112,3 @@ extension ViewController : UITableViewDelegate , UITableViewDataSource , UISearc
         }
     }
 }
-
-
