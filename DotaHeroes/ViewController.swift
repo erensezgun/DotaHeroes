@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         title = "HEROES"
         print("HEROES")
+        print("Development Test")
     }
     
     override func viewWillDisappear(_ animated: Bool) {
